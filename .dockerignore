@@ -9,6 +9,8 @@
 
 **/*.sqlite3
 **/*.log
+**/build
+**/dist
 
 **/.vscode
 
