@@ -1,0 +1,23 @@
+# syntax=docker/dockerfile:1
+# helps parser of older or newer versions
+
+# dev image
+# see ./scripts/docker to build, run and stop
+
+FROM node:16-alpine
+# https://hub.docker.com/_/node/
+# list of all node images
+
+ENV NODE_ENV=development
+
+WORKDIR /app
+# allows relative paths
+
+COPY . .
+
+RUN ./s_install.sh
+RUN NODE_ENV=development ./s_seed.sh
+
+EXPOSE 8080:8080
+
+CMD ["./scripts/start.sh"]

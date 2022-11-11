@@ -1,0 +1,27 @@
+# HAND-WRITTEN
+
+**/.env
+**/.env*.local
+**/*.local
+
+**/node_modules
+**/package-lock.json
+
+**/*.sqlite3
+**/*.log
+
+**/.vscode
+
+# ! to be included in container images
+
+# **/dist
+
+# ! to be excluded from container images
+
+# docs
+# globals
+
+# client/src
+# client/package.json
+# client/vite.config.js
+# client/index.html
