@@ -6,8 +6,8 @@
 docker run \
     --detach \
     --publish 8080:8080 \
-    --name songbook_dev \
-    songbook:dev
+    --name fireside_dev \
+    fireside:dev
 
 
     #--env-file ./server/.env \

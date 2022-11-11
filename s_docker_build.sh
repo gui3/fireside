@@ -5,5 +5,5 @@
 
 docker build \
     --file Dockerfile.dev \
-    --tag songbook:dev \
+    --tag fireside:dev \
     .

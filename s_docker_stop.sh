@@ -3,5 +3,5 @@
 # this script
 # stops and delete the docker container
 
-docker stop songbook_dev
-docker rm songbook_dev
+docker stop fireside_dev
+docker rm fireside_dev
