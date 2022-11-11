@@ -1,0 +1,21 @@
+---
+import api_routes from "../../../global/api_routes.js"
+---
+
+
+<article>
+	<h2 id="api_routes">API Routes</h2>
+	<ul class="cards">
+		{api_routes.map(route => 
+		<li>
+			<h3><code>{route.method} {route.path}</code></h3>
+			<p>{route.description}</p>
+			<dl>
+				<dt>Expects:</dt><dd>{route.expects}</dd>
+				<dt>Source:</dt><dd>{route.handler}</dd>
+				<dt>local url:</dt><dd>{"localhost:8080" + route.path}</dd>
+			</dl>
+		</li>
+		)}
+	</ul>
+</article>

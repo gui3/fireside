@@ -1,0 +1,34 @@
+---
+import Api_routes from "../articles/Api_routes.astro";
+
+const links = [
+	{anchor: "api_routes", text: "Api Routes"}
+]
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Fireside Dev Documentation</title>
+	</head>
+	<body>
+		<header>
+			<h1>Fireside Dev Documentation</h1>
+			<nav>
+				<ul>
+					{links.map(link => 
+						<li><a href={"#" + link.anchor}>{link.text}</a></li>
+					)}
+				</ul>
+			</nav>
+		</header>
+		
+		<section>
+			<h2>API</h2>
+			<Api_routes/>
+		</section>
+	</body>
+</html>

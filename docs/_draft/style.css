@@ -1,0 +1,65 @@
+
+html {
+    font-family: monospace;
+    font-size: 18px;
+    text-align: center;
+    padding: 3rem;
+}
+
+div, nav, textarea {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* chordpro */
+
+.sheet {
+    text-align: start;
+}
+
+.line {
+    padding: 0.1rem 0;
+    min-height: 1rem;
+}
+
+.spacer {
+    display: inline-block;
+    min-width: 3rem;
+}
+
+.lyric {
+    vertical-align: bottom;
+}
+
+.chord-spot {
+    height: 3rem;
+    display: inline-block;
+    overflow: visible;
+    width: 0;
+}
+
+.chord-spot.nolyric {
+    width: auto;
+    min-width: 2rem;
+}
+
+.chord-symbol {
+    user-select: none;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    border: 2px solid #000;
+    background-color: #509;
+    color: #fff;
+    font-weight: bold;
+    opacity: 0.5;
+    vertical-align: top;
+}
+
+.chord-symbol:hover {
+    font-size: 2rem;
+    opacity: 1;
+    z-index: 100;
+    position: relative;
+    top: -50%;
+}

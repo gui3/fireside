@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<meta name="viewport" content="width=device-width">
+		<meta name="generator" content="Astro v1.6.7">
+		<title>Fireside Dev Documentation</title>
+	</head>
+	<body>
+		<header>
+			<h1>Fireside Dev Documentation</h1>
+			<nav>
+				<ul>
+					<li><a href="#api_routes">Api Routes</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section>
+			<h2>API</h2>
+			<article>
+	<h2 id="api_routes">API Routes</h2>
+	<ul class="cards">
+		<li>
+			<h3><code>POST /api/signup</code></h3>
+			<p>creates a new account &amp; redirects to /api/login</p>
+			<dl>
+				<dt>Expects:</dt><dd>json body with keys username, email, password</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_auth</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/signup</dd>
+			</dl>
+		</li><li>
+			<h3><code>POST /api/login</code></h3>
+			<p>attempt to login to an account, creates a session with cookie if success</p>
+			<dl>
+				<dt>Expects:</dt><dd>json body with keys username|email|login, password</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_auth</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/login</dd>
+			</dl>
+		</li><li>
+			<h3><code>ALL /api/logout</code></h3>
+			<p>deletes the current session</p>
+			<dl>
+				<dt>Expects:</dt><dd>&lt;nothing&gt;</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_auth</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/logout</dd>
+			</dl>
+		</li><li>
+			<h3><code>ALL /api/session</code></h3>
+			<p>sends information about current session</p>
+			<dl>
+				<dt>Expects:</dt><dd></dd>
+				<dt>Source:</dt><dd>server/src/routes/r_auth</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/session</dd>
+			</dl>
+		</li><li>
+			<h3><code>GET /api/me</code></h3>
+			<p>sends information about current user (username, email, userid)</p>
+			<dl>
+				<dt>Expects:</dt><dd>&lt;nothing&gt;</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_auth</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/me</dd>
+			</dl>
+		</li><li>
+			<h3><code>PUT /api/me</code></h3>
+			<p>updates the current user with new values</p>
+			<dl>
+				<dt>Expects:</dt><dd>json body with keys username?, email?, password?</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_auth</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/me</dd>
+			</dl>
+		</li><li>
+			<h3><code>DELETE /api/me</code></h3>
+			<p>if password is correct, deletes the current user&#39;s account</p>
+			<dl>
+				<dt>Expects:</dt><dd>json body with keys password !</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_auth</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/me</dd>
+			</dl>
+		</li><li>
+			<h3><code>GET /api/user?search=&lt;string&gt;</code></h3>
+			<p>list all users, filtered by optionnal parameter search</p>
+			<dl>
+				<dt>Expects:</dt><dd>&lt;nothing&gt;</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_auth</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/user?search=&lt;string&gt;</dd>
+			</dl>
+		</li><li>
+			<h3><code>GET /api/user/:id</code></h3>
+			<p>sends username and userid of user :id</p>
+			<dl>
+				<dt>Expects:</dt><dd>&lt;nothing&gt;</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_auth</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/user/:id</dd>
+			</dl>
+		</li><li>
+			<h3><code>GET /api/admin/can/:id</code></h3>
+			<p>sends all roles of user :id</p>
+			<dl>
+				<dt>Expects:</dt><dd>&lt;nothing&gt;</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_admin</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/admin/can/:id</dd>
+			</dl>
+		</li><li>
+			<h3><code>GET /api/admin/can</code></h3>
+			<p>sends a list of all users and their permissions</p>
+			<dl>
+				<dt>Expects:</dt><dd>&lt;nothing&gt;</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_admin</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/admin/can</dd>
+			</dl>
+		</li><li>
+			<h3><code>POST /api/admin/grant</code></h3>
+			<p>grants user with permission of the name rolename</p>
+			<dl>
+				<dt>Expects:</dt><dd>json body with keys userid, rolename</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_admin</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/admin/grant</dd>
+			</dl>
+		</li><li>
+			<h3><code>POST /api/admin/revoke</code></h3>
+			<p>revoke permission rolename from user</p>
+			<dl>
+				<dt>Expects:</dt><dd>json body with keys userid, rolename</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_admin</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/admin/revoke</dd>
+			</dl>
+		</li><li>
+			<h3><code>GET /api/admin/role</code></h3>
+			<p>sends the list of available roles and their ids</p>
+			<dl>
+				<dt>Expects:</dt><dd>&lt;nothing&gt;</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_admin</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/admin/role</dd>
+			</dl>
+		</li><li>
+			<h3><code>POST /api/admin/role</code></h3>
+			<p>creates role of name rolename</p>
+			<dl>
+				<dt>Expects:</dt><dd>json body with key rolename</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_admin</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/admin/role</dd>
+			</dl>
+		</li><li>
+			<h3><code>DELETE /api/admin/role</code></h3>
+			<p>deletes role rolename</p>
+			<dl>
+				<dt>Expects:</dt><dd>json body with key rolename</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_admin</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/admin/role</dd>
+			</dl>
+		</li><li>
+			<h3><code>GET /api/song?search=&lt;string&gt;</code></h3>
+			<p>sends list of songs, filtered by optional param search</p>
+			<dl>
+				<dt>Expects:</dt><dd>&lt;nothing&gt;</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_song</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/song?search=&lt;string&gt;</dd>
+			</dl>
+		</li><li>
+			<h3><code>GET /api/song/:id</code></h3>
+			<p>sends song identified by :id</p>
+			<dl>
+				<dt>Expects:</dt><dd>&lt;nothing&gt;</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_song</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/song/:id</dd>
+			</dl>
+		</li><li>
+			<h3><code>POST /api/song</code></h3>
+			<p>creates a new song</p>
+			<dl>
+				<dt>Expects:</dt><dd>to be logged, json body with keys songname, content, author?</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_song</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/song</dd>
+			</dl>
+		</li><li>
+			<h3><code>PUT /api/song/:id</code></h3>
+			<p>updates song identified by :id</p>
+			<dl>
+				<dt>Expects:</dt><dd>to be logged, json body with keys songname?, content?, author?</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_song</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/song/:id</dd>
+			</dl>
+		</li><li>
+			<h3><code>DELETE /api/song/:id</code></h3>
+			<p>deletes song identified by id</p>
+			<dl>
+				<dt>Expects:</dt><dd>to be logged</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_song</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/song/:id</dd>
+			</dl>
+		</li>
+	</ul>
+</article>
+		</section>
+	</body></html>

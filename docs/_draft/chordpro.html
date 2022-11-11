@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chordpro test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>Chordpro visualizr</h1>
+        <button onclick="javascript:buttonParse()">Parse</button>
+    </nav>
+    <textarea name="input" id="input" cols="30" rows="10" oninput="javascript:buttonParse()">
+
+    </textarea>
+    <div id="show" class="sheet"></div>
+</body>
+<script src="./chordpro_sample.js"></script>
+<script src="./chordpro_visualizr.js"></script>
+<script>
+const show = document.getElementById("show")
+const input = document.getElementById("input")
+
+input.innerHTML = samples.full
+
+function buttonParse () {
+    load(input.value).hydrate(show)
+}
+
+buttonParse()
+
+</script>
+</html>
