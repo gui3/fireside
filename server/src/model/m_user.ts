@@ -2,6 +2,7 @@ const createPassword = require("../../auth/createPassword")
 
 import db from "../db"
 import log from "../log"
+import * as m_role from "./m_role"
 
 export interface User {
 	userid?: number,
@@ -73,7 +74,7 @@ export async function list (search: string = ""): Promise<Array<User>> {
 	})
 }
 
-export async function create (user: User): Promise<number|false> {
+export async function create (user: User): Promise<boolean> {
 	try {
 		if (!user.password) return false
 		const {password, iterations, salt} = createPassword(user.password)
@@ -86,7 +87,13 @@ export async function create (user: User): Promise<number|false> {
 
 		if (result.length === 0) return false
 
-		return result[0].userid
+		const id = result[0].userid
+
+		await m_role.grant(id, "create_song")
+		await m_role.grant(id, "update_own_song")
+		await m_role.grant(id, "delete_song")
+
+		return true
 	}
 	catch (err) {
 		log.error(err)

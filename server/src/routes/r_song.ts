@@ -58,7 +58,7 @@ r_song.post("/", async_wrap(async (req: Request, res: Response) => {
 	if (!req.session.userid) return res.status(403).json(format.error("Forbidden", 403))
 
 	const song: m_song.Song|null = await m_song.find_by_id(req.params.id)
-	if (!song) return res.status(400).json(format.error("Invalid request", 404))
+	if (!song) return res.status(404).json(format.error("Invalid request", 404))
 
 	let authorized: boolean = false
 	if (await can(req.session.userid, "update_all_song")) authorized = true
@@ -83,7 +83,7 @@ r_song.delete("/:id", async_wrap(async (req: Request, res: Response) => {
 	if (!req.session.userid) return res.status(403).json(format.error("Forbidden", 403))
 
 	const song: m_song.Song|null = await m_song.find_by_id(req.params.id)
-	if (!song) return res.status(400).json(format.error("Invalid request", 404))
+	if (!song) return res.status(404).json(format.error("Invalid request", 404))
 
 	let authorized: boolean = false
 	if (await can(req.session.userid, "delete_all_song")) authorized = true

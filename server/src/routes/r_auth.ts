@@ -5,6 +5,7 @@ import log from "../log"
 import format from "../format"
 import async_wrap from "../async_wrap"
 import * as m_user from "../model/m_user"
+import * as m_role from "../model/m_role"
 
 const r_auth: Router = Router()
 
@@ -63,6 +64,7 @@ r_auth.get("/me", async_wrap(async (req: Request, res: Response) => {
 
 	const user: m_user.User|null = await m_user.find_by_id(req.session.userid)
 	if (!user) return res.redirect("/api/auth/logout?reason=USER_DOES_NOT_EXIST")
+	else user.permissions = await m_role.user_roles(user.userid || "")
 
 	res.json(format.data({...user, password: undefined, salt: undefined, iterations: undefined}, "USER"))
 }))
@@ -72,9 +74,9 @@ r_auth.get("/me", async_wrap(async (req: Request, res: Response) => {
  */
 r_auth.post("/signup", async_wrap(async (req: Request, res: Response) => {
 	const new_user: m_user.User = m_user.format(req.body)
-	const done: number|false = await m_user.create(new_user)
+	const done: boolean = await m_user.create(new_user)
 
-	if (done !== false) res.redirect(307, "/api/auth/login")
+	if (done) res.redirect(307, "/api/login")
 	else res.json(format.error("Could not create your account", 400))
 }))
 

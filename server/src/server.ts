@@ -1,4 +1,5 @@
 import express, { Express, Request, Response, NextFunction } from 'express'
+import {resolve} from "path"
 import dotenv from 'dotenv'
 import api from "./api"
 import log from "./log"
@@ -17,16 +18,22 @@ app.use("*", (req:Request, res:Response, next:NextFunction): void => {
 })
 
 // static
-app.use(express.static("../../public"))
+app.use(express.static(resolve(__dirname,"../../public")))
 
+// api
 app.use("/api", api)
 
-/*
-app.use("*", (req: Request, res: Response, next: NextFunction, err: any) => {
-	if (err) console.error(err)
-	//next()
+// non-api 404 => handled by client
+app.use((req:Request, res:Response, next:NextFunction) => {
+	console.log("> turnover " + req.url)
+	next()
 })
-*/
+app.use((req:Request, res:Response) => {
+	res.sendFile(resolve(
+		__dirname,
+		"../../public/index.html"
+	))
+})
 
 // listen
 app.listen(port, () => {

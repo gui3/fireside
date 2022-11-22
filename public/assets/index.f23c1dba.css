@@ -1,0 +1,1 @@
+.flex.row{display:flex;flex-direction:row;justify-content:space-between}.chordpro.line{min-height:1rem}.chordpro.line>span{display:inline-block}.chordpro.line>span:hover{outline:2px solid red}.chordpro.chord{display:inline-block;border-radius:.2rem;background:#609;box-shadow:5px 5px 4px inset #0005;font-weight:700;color:#fff;padding:.1rem}

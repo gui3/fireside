@@ -136,5 +136,62 @@ export default [
 		description: "deletes song identified by id",
 		handler: "server/src/routes/r_song"
 	},
-
+	// BOOKS ------------
+	{
+		path: "/api/book",
+		method: "GET",
+		expects: "to be logged",
+		description: "lists all book of current user",
+		handler: "server/src/routes/r_book"
+	},{
+		path: "/api/book/:id",
+		method: "GET",
+		expects: "to be logged",
+		description: "gives details about book :id of current user & list of songs",
+		handler: "server/src/routes/r_book"
+	},{
+		path: "/api/book",
+		method: "POST",
+		expects: "body with {bookid, bookname}",
+		description: "creates a new book for current user",
+		handler: "server/src/routes/r_book"
+	},{
+		path: "/api/book/:id",
+		method: "PUT",
+		expects: "book owned by current user, body with {bookid, bookname}",
+		description: "update a book",
+		handler: "server/src/routes/r_book"
+	},{
+		path: "/api/book/:id",
+		method: "DELETE",
+		expects: "book :id owned by current user",
+		description: "deletes book identified by id",
+		handler: "server/src/routes/r_book"
+	},{
+		path: "/api/book/song",
+		method: "POST",
+		expects: "body {bookid, songid, transpose?, order?}",
+		description: "add  song into book if owned by current user",
+		handler: "server/src/routes/r_book"
+	},{
+		path: "/api/book/song",
+		method: "DELETE",
+		expects: "body {bookid, songid}",
+		description: "remove song from book if owned by current user",
+		handler: "server/src/routes/r_book"
+	},
+	// LIKES
+	{
+		path: "/api/like/:id",
+		method: "POST",
+		expects: "to be logged",
+		description: "like or unlike song :id",
+		handler: "server/src/routes/r_like"
+	}, {
+		path: "/api/like/:id",
+		method: "GET",
+		expects: "to be logged",
+		description: "returns {data: true} if the song :id is liked by current user",
+		handler: "server/src/routes/r_like"
+	}
 ]

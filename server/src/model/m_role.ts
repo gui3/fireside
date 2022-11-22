@@ -7,16 +7,16 @@ export interface Role {
 	rolename: string
 }
 
-export interface Role_x_User {
-	roleid?: number,
-	userid?: number
-}
-
 export function format (input: any): Role {
 	return {
 		roleid: input.roleid,
 		rolename: input.rolename
 	}
+}
+
+export interface Role_x_User {
+	roleid?: number,
+	userid?: number
 }
 
 export async function find_by_name (rolename: string): Promise<Role|null> {

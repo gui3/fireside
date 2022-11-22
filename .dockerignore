@@ -11,19 +11,6 @@
 **/*.log
 **/build
 **/dist
+**/public
 
 **/.vscode
-
-# ! to be included in container images
-
-# **/dist
-
-# ! to be excluded from container images
-
-# docs
-# globals
-
-# client/src
-# client/package.json
-# client/vite.config.js
-# client/index.html

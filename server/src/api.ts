@@ -6,6 +6,8 @@ import "./types"
 import log from "./log"
 import format, { ApiResponse } from "./format"
 import r_song from "./routes/r_song"
+import r_book from "./routes/r_book"
+import r_like from "./routes/r_like"
 import r_auth from "./routes/r_auth"
 import r_admin from "./routes/r_admin"
 
@@ -29,6 +31,8 @@ api.use(express.urlencoded({ extended: true }))
 
 // api
 api.use("/song", r_song)
+api.use("/book", r_book)
+api.use("/like", r_like)
 api.use("/", r_auth)
 api.use("/admin", r_admin)
 api.use("/", r_doc)

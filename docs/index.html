@@ -190,6 +190,70 @@
 				<dt>Source:</dt><dd>server/src/routes/r_song</dd>
 				<dt>local url:</dt><dd>localhost:8080/api/song/:id</dd>
 			</dl>
+		</li><li>
+			<h3><code>GET /api/book</code></h3>
+			<p>lists all book of current user</p>
+			<dl>
+				<dt>Expects:</dt><dd>to be logged</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_book</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/book</dd>
+			</dl>
+		</li><li>
+			<h3><code>GET /api/book/:id</code></h3>
+			<p>gives details about book :id of current user &amp; list of songs</p>
+			<dl>
+				<dt>Expects:</dt><dd>to be logged</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_book</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/book/:id</dd>
+			</dl>
+		</li><li>
+			<h3><code>POST /api/book</code></h3>
+			<p>creates a new book for current user</p>
+			<dl>
+				<dt>Expects:</dt><dd>body with {bookid, bookname}</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_book</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/book</dd>
+			</dl>
+		</li><li>
+			<h3><code>PUT /api/book/:id</code></h3>
+			<p>update a book</p>
+			<dl>
+				<dt>Expects:</dt><dd>book owned by current user, body with {bookid, bookname}</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_book</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/book/:id</dd>
+			</dl>
+		</li><li>
+			<h3><code>DELETE /api/book/:id</code></h3>
+			<p>deletes book identified by id</p>
+			<dl>
+				<dt>Expects:</dt><dd>book :id owned by current user</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_book</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/book/:id</dd>
+			</dl>
+		</li><li>
+			<h3><code>POST /api/book/song</code></h3>
+			<p>add  song into book if owned by current user</p>
+			<dl>
+				<dt>Expects:</dt><dd>body {bookid, songid, transpose?, order?}</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_book</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/book/song</dd>
+			</dl>
+		</li><li>
+			<h3><code>DELETE /api/book/song</code></h3>
+			<p>remove song from book if owned by current user</p>
+			<dl>
+				<dt>Expects:</dt><dd>body {bookid, songid}</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_book</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/book/song</dd>
+			</dl>
+		</li><li>
+			<h3><code>POST /api/like/:id</code></h3>
+			<p>like or unlike song :id</p>
+			<dl>
+				<dt>Expects:</dt><dd>to be logged</dd>
+				<dt>Source:</dt><dd>server/src/routes/r_like</dd>
+				<dt>local url:</dt><dd>localhost:8080/api/like/:id</dd>
+			</dl>
 		</li>
 	</ul>
 </article>

@@ -8,7 +8,7 @@ exports.up = function(knex) {
 		table.increments("songid")
 		table.string("songname").notNullable()
 		table.string("author")
-		table.text("content")
+		table.text("content").notNullable()
 
 		table.integer("userid").unsigned()
 		table.foreign("userid").references("userid").inTable("users")
