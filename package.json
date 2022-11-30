@@ -1,0 +1,22 @@
+{
+  "name": "fireside",
+  "version": "0.0.0",
+  "main": "server/build/server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "install": "./s_install.sh",
+	"start": "./s_start.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gui3/fireside.git"
+  },
+  "author": "gui.silvent@gmail.com",
+  "license": "GPL-v3-or-later",
+  "bugs": {
+    "url": "https://github.com/gui3/fireside/issues"
+  },
+  "homepage": "https://github.com/gui3/fireside#readme"
+}
