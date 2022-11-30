@@ -1,10 +1,6 @@
-import { useState } from 'react'
 import Tool from '../components/Tool'
-import log from '../scripts/log'
 
-function Home() {
-	const [count, setCount] = useState(0)
-
+export default function Home() {
 	return (
 		<div className="center-items center-text position-relative top bottom left right">
 			<article className="Home responsive-padding">
@@ -20,6 +16,7 @@ function Home() {
 					<Tool url="/search" style="bigbutton">
 						Browse songs
 					</Tool>
+
 					<Tool url="/menu" style="bigbutton">
 						Explore Site
 					</Tool>
@@ -28,5 +25,3 @@ function Home() {
 		</div>
 	)
 }
-
-export default Home

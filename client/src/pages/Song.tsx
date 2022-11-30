@@ -19,9 +19,8 @@ export default function Song() {
 	if (typeof id === "string" && id !== songid) setSongid(id)
 
 	useEffect(() => {
-		if (!id || id.length === 0) return
-
-		fetchData("/api/song/" + id)
+		if (songid && songid.length !== 0) {
+			fetchData("/api/song/" + songid)
 			.then(json => {
 				log.debug("json response", json)
 				if (json.valid && json.type === "SONG") {
@@ -29,6 +28,7 @@ export default function Song() {
 					setSongData(json.data)
 				}
 			})
+		}
 	}, [songid])
 
 	return (

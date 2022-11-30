@@ -1,0 +1,1 @@
+web: ./s_install.sh && ./s_server_prod.sh

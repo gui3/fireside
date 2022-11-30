@@ -23,6 +23,12 @@ export async function liked (userid: number|string, songid: number|string): Prom
 	return result.length > 0
 }
 
+/**
+ * like a song
+ * @param userid the user id
+ * @param songid the song id to like
+ * @returns Promise resolving to true if success, false otherwise
+ */
 export async function like (userid: number|string, songid: number|string): Promise<boolean> {
 	const song: m_song.Song|null = await m_song.find_by_id(songid)
 	const user: m_user.User|null = await m_user.find_by_id(userid)
@@ -35,6 +41,12 @@ export async function like (userid: number|string, songid: number|string): Promi
 	return result.length === 1
 }
 
+/**
+ * unlikes a song (deletes all existing likes)
+ * @param userid the user id
+ * @param songid the song id to like
+ * @returns Promise resolving to true if success, false otherwise
+ */
 export async function unlike (userid: number|string, songid: number|string): Promise<boolean> {
 	try {
 		const result: number = await db("likes")

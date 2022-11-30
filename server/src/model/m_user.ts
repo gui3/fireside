@@ -41,11 +41,17 @@ export async function find_by_email (email: string): Promise<User|null> {
 	const found: Array<User> = await db("users")
 	.where({email})
 
-	if (found.length === 1) return found[0]
-	else if (found.length === 0) return null
-	else {
-		log.info("multiple users with email " + email)
-		return null
+	switch (found.length) {
+		case 1:
+			return found[0]
+			break
+		case 0:
+			return null
+			break
+		default:
+			log.info("multiple users with email " + email)
+			return null
+			break
 	}
 }
 

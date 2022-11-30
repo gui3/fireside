@@ -1,11 +1,10 @@
-const knexfile = require("../knexfile")
+const knexfile: any = require("../knexfile")
 import log from "./log"
 
 import knex, {Knex} from "knex"
-//import knexfile from "../knexfile"
 
 export default function connect(): Knex {
-	const config = process.env.NODE_ENV === "production"
+	const config: any = process.env.NODE_ENV === "production"
 		? knexfile.production
 		: knexfile.development
 
@@ -13,5 +12,3 @@ export default function connect(): Knex {
 
 	return knex(config)
 }
-
-//module.exports = connect

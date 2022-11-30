@@ -1,6 +1,9 @@
 import db from "../db"
 import log from "../log"
 
+/**
+ * interface describing a song
+ */
 export interface Song {
 	songid?: number,
 	songname: string,
@@ -10,6 +13,11 @@ export interface Song {
 	originsongid?: number
 }
 
+/**
+ * formats input object into a Song
+ * @param input an object
+ * @returns an object implementing Song
+ */
 export function format (input: any): Song {
 	return {
 		songid: input.songid,
@@ -21,6 +29,11 @@ export function format (input: any): Song {
 	}
 }
 
+/**
+ * finds the song corresponding to the provided ID or null if not found
+ * @param songid the id of the song
+ * @returns Promise resolving to found Song or null if not found
+ */
 export async function find_by_id (songid: number|string): Promise<Song|null> {
 	const result: Array<Song> = await db("songs")
 	.where({songid})
@@ -33,11 +46,21 @@ export async function find_by_id (songid: number|string): Promise<Song|null> {
 	}
 }
 
+/**
+ * gets all songs, filtered by search if provided
+ * @param filter a string to search in the songs content
+ * @returns Promise resolving to an Array of Songs
+ */
 export async function list (filter: string = ""): Promise<Array<Song>> {
 	return await db("songs")
 	.whereLike("content", "%" + filter.replace(/\s/g, "%") + "%")
 }
 
+/**
+ * creates and save one song in the database
+ * @param song an object implementing Song, to be saved
+ * @returns Promise resolving to true if success, else false
+ */
 export async function create (song: Song): Promise<boolean> {
 	try {
 		const result: Array<any> = await db("songs")
@@ -52,6 +75,12 @@ export async function create (song: Song): Promise<boolean> {
 
 }
 
+/**
+ * updates a song
+ * @param songid the ID of the song to update
+ * @param song a Song object with the updated data
+ * @returns Promise resolving to true if success, false otherwise
+ */
 export async function update (songid: number|string, song: Song): Promise<boolean> {
 	try {
 		const result: any = await db("songs")
@@ -66,6 +95,11 @@ export async function update (songid: number|string, song: Song): Promise<boolea
 	}
 }
 
+/**
+ * deletes a song
+ * @param songid the ID of the song to delete
+ * @returns Promise resolving to true if success, false otherwise
+ */
 export async function del (songid: number|string): Promise<boolean> {
 	try {
 		const result: number = await db("songs")

@@ -1,6 +1,3 @@
-import * as m_user from "./model/m_user"
-
-import db from "./db"
 import * as m_role from "./model/m_role"
 
 export default async function can (userid: number|string, rolename: string): Promise<boolean> {

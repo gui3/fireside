@@ -1,8 +1,7 @@
 # syntax=docker/dockerfile:1
 # helps parser of older or newer versions
 
-# dev image
-# see ./scripts/docker to build, run and stop
+# development image
 
 FROM node:16-alpine
 # https://hub.docker.com/_/node/
