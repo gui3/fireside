@@ -9,8 +9,6 @@
     "doc": "docs"
   },
   "scripts": {
-    "install": "./s_install.sh",
-	"start": "./s_server_prod.sh"
   },
   "repository": {
     "type": "git",
