@@ -9,6 +9,7 @@
     "doc": "docs"
   },
   "scripts": {
+	"build": "sh s_install.sh"
   },
   "repository": {
     "type": "git",
