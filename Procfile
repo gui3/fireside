@@ -1,1 +1,1 @@
-web: ./s_install.sh && ./s_server_prod.sh
+web: sh ./s_install.sh && sh ./s_server_prod.sh
