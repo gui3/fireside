@@ -2,13 +2,14 @@
 echo "installing & building client"
 
 cd client
-npm install
+NODE_ENV=development npm install
 npm run build
+npm install
 cd ..
 
 echo installing server
 cd server
-npm install
+NODE_ENV=development npm install
 npm run build
 
 echo setup server
