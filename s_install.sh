@@ -11,6 +11,7 @@ echo "installing server"
 cd server
 NODE_ENV=development npm install
 npm run build
+ls
 
 echo "setup server"
 npm run knex migrate:latest
