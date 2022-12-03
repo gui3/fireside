@@ -1,3 +1,5 @@
+import createPassword from "../../auth/createPassword"
+
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> } 
