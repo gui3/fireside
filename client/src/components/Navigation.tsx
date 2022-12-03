@@ -7,7 +7,7 @@ export default function Navigation() {
 			<ul>
 				{routes.map((route: any, ix: number) => !route.secret &&
 					<li key={ix}>
-						<Tool url={route.path} style="bigbutton">{route.name}</Tool>
+						<Tool url={route.path} style="button">{route.name}</Tool>
 					</li>
 				)}
 			</ul>

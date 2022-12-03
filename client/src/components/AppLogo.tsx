@@ -1,4 +1,5 @@
-// import AppLogoSvg from '../../../global/logos/AppLogoSvg';
+import IconAppLogo from "../icons/icon_applogo"
+
 
 function AppLogo(props: any) {
 
@@ -6,9 +7,9 @@ function AppLogo(props: any) {
 
 	return (
 		<span
-		className={"AppLogo" + (props.dynamic ? " dynamic" : "")}
-		style={{ width: size, height: size }}>
-			Logo
+		className={"AppLogo inline-icon" + (props.dynamic ? " dynamic" : "")}
+		style={{ width: size, height: size}}>
+			<IconAppLogo/>
 		</span>
 	)
 }

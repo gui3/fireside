@@ -2,8 +2,8 @@ import Tool from '../components/Tool'
 
 export default function Home() {
 	return (
-		<div className="center-items center-text position-relative top bottom left right">
-			<article className="Home responsive-padding">
+		<div className="center-items center-text fullsize">
+			<article className="Home">
 				<h2>
 					Singin' Together
 				</h2>
@@ -12,12 +12,12 @@ export default function Home() {
 					is a place to share
 					your favorite song lyrics and chords.
 				</p>
-				<div className="card">
-					<Tool url="/search" style="bigbutton">
+				<div className="">
+					<Tool url="/search" style="button">
 						Browse songs
 					</Tool>
 
-					<Tool url="/menu" style="bigbutton">
+					<Tool url="/menu" style="button">
 						Explore Site
 					</Tool>
 				</div>

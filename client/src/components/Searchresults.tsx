@@ -27,12 +27,12 @@ export default function SearchResults(props: any) {
 	}, [props.search])
 
 	return (
-		<div>
+		<div >
 			<h3>Search Results</h3>
 			<ol>
 				{songs && songs.map && songs.map((song: any, ix: number) => {
 					return (
-						<li key={ix}>
+						<li key={ix} className="card bg-smooth">
 							<Link to={"/song/" + song.songid}>
 								<h4>{song.songname}</h4>
 								<p>{song.author}</p>

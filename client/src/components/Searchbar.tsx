@@ -1,6 +1,7 @@
 import { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react"
 import  { useNavigate, NavigateFunction  } from 'react-router-dom'
-import SearchResults from "./Searchresults"
+
+import IconSearch from "../icons/icon_search"
 
 export default function () {
 
@@ -46,7 +47,7 @@ export default function () {
 				placeholder="search songs..." value={search}/>
 
 				<button onClick={() =>submit(search)}>
-					SEARCH
+					<IconSearch />
 				</button>
 			</div>
 		</div>

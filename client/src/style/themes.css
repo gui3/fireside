@@ -1,0 +1,67 @@
+svg.icon {
+	fill: var(--color-back, #fd9);
+}
+
+:_root,
+:root .theme-light {
+	--color-front: #222;
+	--color-frontest: #000;
+	--color-back: #fd9;
+	--color-backest: #fff;
+	--color-clickable: #840;
+	--color-focus: #f40;
+	--color-active: #fc0;
+	--color-inactive: #888;
+}
+
+:root .theme-dark {
+	--color-front: #eee;
+	--color-frontest: #fff;
+	--color-back: #29292f;
+	--color-backest: #222;
+	--color-clickable: #eef;
+	--color-focus: #5ef;
+	--color-active: #fc0;
+	--color-inactive: #888;
+}
+
+:root .theme-camper {
+	--color-front: #332818;
+	--color-frontest: #221808;
+	--color-back: #dbcbb8;
+	--color-backest: #cdbaa0;
+	--color-clickable: #443828;
+	--color-focus: #0a4;
+	--color-active: #fc0;
+	--color-inactive: #888;
+}
+
+:root .theme-contrast {
+	--color-front: #000;
+	--color-frontest: #000;
+	--color-back: #fff;
+	--color-backest: #fff;
+	--color-clickable: #224;
+	--color-focus: #f40;
+	--color-active: #fc0;
+	--color-inactive: #888;
+}
+
+@media (prefers-color-scheme: _light) {
+	:root {
+		color: var(--color-dark, #213547);
+		background-color: var(--color-lightest, #ffffff);
+	}
+
+	a:hover {
+		color: var(--color-interactive-light, #747bff);
+	}
+
+	.bg-smooth {
+		background-color: var(--color-lighter, #fff5ee);
+	}
+
+	.bg-strong {
+		background-color: var(--color-lightest, #fff);
+	}
+}

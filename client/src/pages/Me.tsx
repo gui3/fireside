@@ -26,7 +26,7 @@ export default function () {
 				</dl>
 				<div>
 					<h2>Actions:</h2>
-					<Tool url="/logout">Log out</Tool>
+					<Tool url="/logout" style="button">Log out</Tool>
 				</div>
 			</div>
 		)

@@ -1,2 +1,2 @@
 #release: sh ./s_install.sh
-web: sh ./s_server_prod.sh
+web: sh ./s_server.sh

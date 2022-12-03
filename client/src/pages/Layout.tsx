@@ -1,15 +1,17 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
+import Watermark from "../components/Watermark"
 
 const Layout = () => {
 
   return (
-    <div className="app container bg-strong">
+    <div className="app container bg-strong fullsize flex column">
       <Header/>
 
-      <div className="application">
-        <div className="view">
-          <main className="page position-relative top bottom left right">
+      <div className="application stretch position-relative">
+		<Watermark/>
+        <div className="view scroll fullsize">
+          <main className="page fullsize responsive-padding">
             <Outlet />
           </main>
         </div>

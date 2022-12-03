@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'Amatic_SC';
+	/* font-style: normal; */
+	font-weight: 500;
+	src: url(../assets/fonts/Amatic_SC/AmaticSC-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Amatic_SC';
+	/* font-style: normal; */
+	font-weight: 700;
+	src: url(../assets/fonts/Amatic_SC/AmaticSC-Bold.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Martel_sans';
+	/* font-style: normal; */
+	font-weight: 500;
+	src: url(../assets/fonts/Martel_Sans/MartelSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Martel_sans';
+	/* font-style: normal; */
+	font-weight: 700;
+	src: url(../assets/fonts/Martel_Sans/MartelSans-Bold.ttf) format('truetype');
+}

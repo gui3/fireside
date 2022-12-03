@@ -1,0 +1,191 @@
+/* look */
+
+/*
+less important css attributes
+defining the general look and feel of the application
+*/
+
+/* global */
+
+:root {
+	font-family: Martel_sans, Inter, Avenir, Helvetica, sans-serif;
+	font-size: 16px;
+	/*line-height: 24px;*/
+	font-weight: 400;
+
+	color-scheme: light dark;
+	background-color: var(--color-backest, #fff);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+#root {
+	color: var(--color-front, #000);
+	/*_rgba(255, 255, 255, 0.87); */
+}
+
+h1,
+h2,
+h3,
+.sitename {
+	font-family: Amatic_SC, serif;
+	margin: 0;
+}
+
+h1 {
+	font-size: 5rem;
+}
+
+h2 {
+	font-size: 4rem;
+}
+
+h3 {
+	font-size: 3rem;
+}
+
+.sitename {
+	font-size: 1.8rem;
+	font-weight: 700;
+}
+
+ul,
+ol {
+	list-style: none;
+	margin-block: 0;
+	margin-inline: 0;
+	padding-inline: 0;
+}
+
+img {
+	height: 1em;
+}
+
+article {
+	margin: 0 auto;
+}
+
+a {
+	font-weight: 500;
+	color: var(--color-clickable, #840);
+	text-decoration: inherit;
+}
+
+a:hover {
+	color: var(--color-focus, #f40);
+}
+
+button {
+	border-radius: 8px;
+	border: none;
+	/*1px solid transparent;*/
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: inherit;
+	/* var(--color-darkest, #1a1a1a); */
+	color: inherit;
+	/* var(--color-lightest, #fff); */
+	cursor: pointer;
+	transition: all 0.25s;
+}
+
+/*
+button:hover {
+  border-color: var(--color-interactive-light, #646cff);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+*/
+
+input,
+.card,
+button.button {
+	border-radius: 5px 15px 8px 12px;
+	margin: 0.5rem;
+}
+
+input,
+.card {
+	border: 2px solid var(--color-focus, #840);
+	padding: 0.4rem;
+	caret-color: var(--color-front, #000);
+}
+
+button.button {
+	background: var(--color-clickable, #840);
+	transform: rotate(-1.5deg);
+	color: var(--color-backest, #fff);
+	font-weight: bold;
+}
+
+button.button * {
+	display: block;
+	transform: rotate(1.5deg);
+}
+
+button.button:hover,
+button.button:focus {
+	background: var(--color-focus, #f40);
+}
+
+button.button:active {
+	background: var(--color-active, #fc0);
+}
+
+button svg.icon {
+	height: 2rem;
+	width: 2rem;
+}
+
+button svg.icon path {
+	fill: var(--color-clickable, #950);
+}
+
+button:hover svg.icon path,
+button:focus svg.icon path {
+	fill: var(--color-focus, #f40);
+}
+
+button:active svg.icon path {
+	fill: var(--color-active, #fc0);
+}
+
+/* look classes */
+
+.big {
+	font-size: 2em;
+}
+
+.bg-smooth {
+	background-color: var(--color-back, #fed);
+}
+
+.bg-strong {
+	background-color: var(--color-backest, #fff);
+}
+
+.logo {
+	height: 6em;
+	padding: 1.5em;
+	will-change: filter;
+}
+
+.logo:hover {
+	filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+	filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.context.dialog * {
+	width: 100%;
+}

@@ -72,7 +72,7 @@ export default function Login () {
 					<label htmlFor="password">Password</label>
 					<input type="password" name="password"/>
 				</div>
-				<button type="submit">Login</button>
+				<button type="submit" className="button">Login</button>
 			</form>
 
 			<hr/>
@@ -91,7 +91,7 @@ export default function Login () {
 					<label htmlFor="password">Password</label>
 					<input type="password" name="password"/>
 				</div>
-				<button type="submit" >Signup</button>
+				<button type="submit" className="button">Signup</button>
 			</form>
 		</div>
 	)
