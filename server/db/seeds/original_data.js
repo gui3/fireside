@@ -1,4 +1,5 @@
 const createPassword = require("../../auth/createPassword")
+const song_samples = require("../../../global/samples/songs.json")
 
 /**
  * @param { import("knex").Knex } knex
