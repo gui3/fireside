@@ -55,4 +55,14 @@ exports.seed = async function (knex) {
 		{ userid: adminId, roleid: roles[4].roleid },
 		{ userid: adminId, roleid: roles[5].roleid }
 	]);
+
+	// SONGS
+
+	// Deletes ALL existing entries
+	await knex('songs').del()
+
+	await knex('songs').insert(song_samples.map(song => {
+		song.userid =  adminId // seed songs belong to admin
+		return song
+	}))
 };
