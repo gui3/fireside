@@ -18,7 +18,7 @@ exports.seed = async function (knex) {
 		{ rolename: 'update_own_song' },
 		{ rolename: 'delete_all_song' },
 		{ rolename: 'delete_own_song' }
-	]);
+	], ["roleid"]);
 
 	// USERS
 
@@ -39,7 +39,7 @@ exports.seed = async function (knex) {
 			username: "member",
 			email: "member@yopmail.com"
 		}
-	]);
+	], ["userid"]);
 
 	// ROLES_x_USERS
 
