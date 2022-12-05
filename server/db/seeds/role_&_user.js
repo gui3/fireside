@@ -7,11 +7,11 @@ const createPassword = require("../../auth/createPassword")
 exports.seed = async function (knex) {
 	// ROLES
 
-	/*
+	
 	// Deletes ALL existing entries
 	await knex('roles').del()
 
-	await knex('roles').insert([
+	const roles = await knex('roles').insert([
 		{ rolename: 'admin' },
 		{ rolename: 'create_song' },
 		{ rolename: 'update_all_song' },
@@ -19,14 +19,13 @@ exports.seed = async function (knex) {
 		{ rolename: 'delete_all_song' },
 		{ rolename: 'delete_own_song' }
 	]);
-	*/
 
 	// USERS
 
 	// Deletes ALL existing entries
 	await knex("users").del()
 
-	await knex('users').insert([
+	const users = await knex('users').insert([
 		{
 			...createPassword("admin"),
 			username: "admin",
@@ -46,12 +45,14 @@ exports.seed = async function (knex) {
 
 	await knex('role_x_user').del()
 
+	const adminId = users[0].userid
+
 	await knex('role_x_user').insert([
-		{ userid: 1, roleid: 1 },
-		{ userid: 1, roleid: 2 },
-		{ userid: 1, roleid: 3 },
-		{ userid: 1, roleid: 4 },
-		{ userid: 1, roleid: 5 },
-		{ userid: 1, roleid: 6 }
+		{ userid: adminId, roleid: roles[0].roleid },
+		{ userid: adminId, roleid: roles[1].roleid },
+		{ userid: adminId, roleid: roles[2].roleid },
+		{ userid: adminId, roleid: roles[3].roleid },
+		{ userid: adminId, roleid: roles[4].roleid },
+		{ userid: adminId, roleid: roles[5].roleid }
 	]);
 };

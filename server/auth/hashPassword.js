@@ -7,7 +7,7 @@ module.exports = function hashPassword (password, salt, iterations) {
 		iterations, 
 		64,
 		"sha512"
-	)
+	).toString("base64")
 
 	return hash
 }
