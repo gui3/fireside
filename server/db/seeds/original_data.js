@@ -5,11 +5,14 @@ const createPassword = require("../../auth/createPassword")
  * @returns { Promise<void> } 
  */
 exports.seed = async function (knex) {
-	// ROLES
 
-	
 	// Deletes ALL existing entries
+	await knex('songs').del()
+	await knex('role_x_user').del()
+	await knex("users").del()
 	await knex('roles').del()
+
+	// ROLES
 
 	const roles = await knex('roles').insert([
 		{ rolename: 'admin' },
@@ -21,9 +24,6 @@ exports.seed = async function (knex) {
 	], ["roleid"]);
 
 	// USERS
-
-	// Deletes ALL existing entries
-	await knex("users").del()
 
 	const users = await knex('users').insert([
 		{
@@ -43,8 +43,6 @@ exports.seed = async function (knex) {
 
 	// ROLES_x_USERS
 
-	await knex('role_x_user').del()
-
 	const adminId = users[0].userid
 
 	await knex('role_x_user').insert([
@@ -58,8 +56,6 @@ exports.seed = async function (knex) {
 
 	// SONGS
 
-	// Deletes ALL existing entries
-	await knex('songs').del()
 
 	await knex('songs').insert(song_samples.map(song => {
 		song.userid =  adminId // seed songs belong to admin
