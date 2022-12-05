@@ -7,8 +7,9 @@ const createPassword = require("../../auth/createPassword")
 exports.seed = async function (knex) {
 	// ROLES
 
+	/*
 	// Deletes ALL existing entries
-	//await knex('roles').del()
+	await knex('roles').del()
 
 	await knex('roles').insert([
 		{ rolename: 'admin' },
@@ -18,6 +19,7 @@ exports.seed = async function (knex) {
 		{ rolename: 'delete_all_song' },
 		{ rolename: 'delete_own_song' }
 	]);
+	*/
 
 	// USERS
 
