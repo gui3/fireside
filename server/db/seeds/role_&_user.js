@@ -1,4 +1,4 @@
-import createPassword from "../../auth/createPassword"
+const createPassword = require("../../auth/createPassword")
 
 /**
  * @param { import("knex").Knex } knex
@@ -8,7 +8,7 @@ exports.seed = async function (knex) {
 	// ROLES
 
 	// Deletes ALL existing entries
-	await knex('roles').del()
+	//await knex('roles').del()
 
 	await knex('roles').insert([
 		{ rolename: 'admin' },
