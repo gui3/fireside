@@ -48,6 +48,11 @@ h3 {
 	font-size: 3rem;
 }
 
+h4 {
+	margin: 0;
+	font-size: 1.2rem;
+}
+
 .sitename {
 	font-size: 1.8rem;
 	font-weight: 700;
@@ -118,6 +123,16 @@ input,
 	padding: 0.4rem;
 	caret-color: var(--color-front, #000);
 }
+
+.card .title {
+	font-weight: bolder;
+}
+
+.card .subtitle {
+	font-weight: normal;
+	font-style: italic;
+}
+
 
 button.button {
 	background: var(--color-clickable, #840);

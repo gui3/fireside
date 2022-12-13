@@ -3,6 +3,8 @@ import fetchData from "../scripts/fetchData";
 import Tool from "./Tool";
 import log from "../scripts/log";
 import { AppContext } from "../App";
+import IconLike from "../icons/icon_like"
+import IconLikeEmpty from "../icons/icon_like_empty";
 
 
 export default function Like (props: any) {
@@ -35,7 +37,7 @@ export default function Like (props: any) {
 
 	return (
 		<Tool action={toggle} disabled={props.disabled}>
-			{liked ? "Unlike" : "Like"}
+			{liked ? <IconLike/> : <IconLikeEmpty/>}
 		</Tool>
 	)
 }

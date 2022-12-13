@@ -32,10 +32,13 @@ export default function SearchResults(props: any) {
 			<ol>
 				{songs && songs.map && songs.map((song: any, ix: number) => {
 					return (
-						<li key={ix} className="card bg-smooth">
+						<li key={ix} className="card bg-strong">
 							<Link to={"/song/" + song.songid}>
-								<h4>{song.songname}</h4>
-								<p>{song.author}</p>
+								<h4>
+									<span className="title">{song.songname}</span>
+									 - 
+									<span className="subtitle">{song.author}</span>
+								</h4>
 							</Link>
 							<Like songid={song.songid} disabled={!app.appData.logged}/>
 						</li>
